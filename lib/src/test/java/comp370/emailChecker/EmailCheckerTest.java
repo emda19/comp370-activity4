@@ -19,12 +19,29 @@ public class EmailCheckerTest {
 	@Test
 	public void test() {
 		//Testing build for passed test
-		int one = 1;
-		int two = 2;
-		assertEquals(one, 1);
-		assertNotEquals(one, 2);
-		assertEquals(two, 2);
-		assertNotEquals(two, 1);
+
+		boolean try1 = EmailChecker.EmailChecker1("Wdsfjsn'@?.!scsd");
+		assertEquals(try1 == true, true);
+	}
+	@Test
+	public void test2()
+	{
+		boolean try2 = EmailChecker.EmailChecker1("akesdfs");
+		assertEquals(try2 == false, true);
+
+	}
+	@Test
+	public void test3()
+	{
+		boolean try3 = EmailChecker.EmailChecker1("michael__galvan1358@gmail.com");
+		assertEquals(try3 == true, true);
+
+	}
+	@Test
+	public void test4()
+	{
+		boolean try4 = EmailChecker.EmailChecker1("michaelgalvan@gmail.com");
+		assertEquals(try4 == false, true);
 	}
 
 }

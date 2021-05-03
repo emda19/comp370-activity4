@@ -13,7 +13,7 @@ public class EmailChecker {
     {
         password = password1;
         Character[] symbols = {'~','!', '#','$','%' ,'^' ,'*' ,'-' ,'_' ,'=' ,'+', '[' ,'{', ']', '}' ,'/' ,';' , ':' , '.', '?'};
-
+        boolean theAt = false;
 
 
         if (password.length() <= 9)
@@ -24,9 +24,14 @@ public class EmailChecker {
 
         for(int e = 0; e < password.length(); e++)
         {
+
             if(password.charAt(e) == ' ') {
                 System.out.println("No spaces allowed in the email address.");
                 return false; }
+            else if(password.charAt(e) == '@')
+            {
+                theAt = true;
+            }
         }
 
         int num = 0;
@@ -41,12 +46,18 @@ public class EmailChecker {
                 }
             }
         }
-        if(num <= 2)
+        if(num < 2)
         {
             System.out.println("You need more unique characters for this email");
             return false;
         }
-        return true;
+        if (theAt == false )
+        {
+            return false;
+        }
+
+
+    return true;
     }
 }
 

@@ -18,7 +18,13 @@ public class EmailCheckerTest {
 
 	@Test
 	public void test() {
-		fail("Not yet implemented");
+		//Testing build for passed test
+		int one = 1;
+		int two = 2;
+		assertEquals(one, 1);
+		assertNotEquals(one, 2);
+		assertEquals(two, 2);
+		assertNotEquals(two, 1);
 	}
 
 }

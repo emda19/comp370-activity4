@@ -12,6 +12,7 @@ plugins {
     id 'java' //creates new task jacocoTestReport, HTML report auto-generated at $buildDir/reports/jacoco/test
     id 'jacoco' //applying JaCoCo plugin
     id 'application'
+    id 'com.github.dawnwords.jacoco.badge' version '0.2.0'
 }
 
 application {
@@ -94,4 +95,11 @@ jacocoTestCoverageVerification {
 			}
 		}
 	}
+}
+
+// Default values
+jacocoBadgeGenSetting {
+	jacocoReportPath "$buildDir/reports/jacoco/test/jacocoTestReport.xml"
+	readmePath "$projectDir/README.md"
+	limit = ['instruction': 0, 'branch': 0, 'line': 0, 'method': 0, 'class': 0]
 }

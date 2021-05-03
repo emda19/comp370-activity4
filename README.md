@@ -6,5 +6,7 @@ This project intends to accept a String value and test its format to determine i
 # Code Coverage
 
 ![LINE](http://line.coverage.link)
-![BRANCH](http://branch.coverage.link)
+
+![BRANCH](https://img.shields.io/github/checks-status/emda19/comp370-activity4/master)
+
 ![COMPLEXITY](http://complexity.link)

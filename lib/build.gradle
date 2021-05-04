@@ -11,17 +11,7 @@ plugins {
     id 'java-library'
     id 'java' //creates new task jacocoTestReport, HTML report auto-generated at $buildDir/reports/jacoco/test
     id 'jacoco' //applying JaCoCo plugin
-    id 'application'
     id 'com.github.dawnwords.jacoco.badge' version '0.2.0'
-}
-
-application {
-	mainClass = 'comp370.emailChecker.Main'
-}
-
-tasks.register('applicationCodeCoverageReport', JacocoReport) {
-	executionData run
-	sourceSets sourceSets.main
 }
 
 repositories {
@@ -42,6 +32,7 @@ dependencies {
 
 test {
 	finalizedBy jacocoTestReport //report always generated after tests run
+	/*
 	jacoco {
 		//Task extension default values
 		enabled = true
@@ -58,43 +49,47 @@ test {
 		port = 6300
 		jmx = false
 	}
+	*/
 }
 
 jacocoTestReport {
 	dependsOn test //tests required to run before report is generated
 	reports {
 		xml.enabled true
+		csv.enabled false
 		html.enabled false
-		/*csv.enabled false
-		html.destination layout.buildDirectory.dir('jacocoHtml').get().asFile*/
+		//html.destination layout.buildDirectory.dir('jacocoHtml').get().asFile
 	}
 }
 
 jacoco {
 	toolVersion = "0.8.6"
 	reportsDirectory = layout.buildDirectory.dir('$buildDir/reports/jacoco')
-	applyTo run
 }
 
+//SIX COVERAGE METRICS: INSTRUCTION, BRANCH, LINE, COMPLEXITY, METHOD, CLASS
 jacocoTestCoverageVerification {
 	violationRules {
+		
 		rule {
+			element = 'METHOD'
 			limit {
-				minimum = 0.5
+				counter = 'LINE'
+				value = 'COVEREDRATIO'
+				minimum = 1.0
 			}
 		}
 		
 		rule {
-			enabled = false
 			element = 'CLASS'
 			includes = ['org.gradle.*']
-			
 			limit {
 				counter = 'LINE'
 				value = 'TOTALCOUNT'
 				maximum = 0.3
 			}
 		}
+		
 	}
 }
 

@@ -17,4 +17,8 @@ This project intends to accept a String value and test its format to determine i
 
 ![CLASS](https://img.shields.io/badge/class--coverage-66%25-yellow.svg)
 
-https://img.shields.io/github/checks-status/emda19/comp370-activity4/master
+![BRANCH](https://img.shields.io/github/languages/code-size/emda19/comp370-activity4)
+
+(https://img.shields.io/github/issues/emda19/comp370-activity4)
+
+![BRANCH](https://img.shields.io/github/commit-activity/m/emda19/comp370-activity4)

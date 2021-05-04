@@ -63,9 +63,10 @@ test {
 jacocoTestReport {
 	dependsOn test //tests required to run before report is generated
 	reports {
-		xml.enabled false
-		csv.enabled false
-		html.destination layout.buildDirectory.dir('jacocoHtml').get().asFile
+		xml.enabled true
+		html.enabled false
+		/*csv.enabled false
+		html.destination layout.buildDirectory.dir('jacocoHtml').get().asFile*/
 	}
 }
 

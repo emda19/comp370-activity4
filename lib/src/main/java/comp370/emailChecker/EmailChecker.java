@@ -3,11 +3,6 @@ package comp370.emailChecker;
 public class EmailChecker {
     static String password;
 
-    public static void main (String[] args)
-    {
-        System.out.println(EmailChecker1("~hello!3234?23"));
-    }
-
 
     public static boolean EmailChecker1(String password1 )
     {

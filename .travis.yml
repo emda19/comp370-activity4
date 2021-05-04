@@ -1,11 +1,15 @@
 language: java
 jdk:
-  - oraclejdk8
-os: windows
-  
-env:
-  - CODECOV_TOKEN='4672200f-2ce9-41dc-8f5b-7f4924fd413b'
+  - oraclejdk11
+os:
+  - windows
 
+branches:
+  only:
+    - master
+
+install:
+  - ./gradlew assemble
 
 before_script:
   - chmod +x gradlew
@@ -16,3 +20,11 @@ script:
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
+  
+before_cache:
+  - rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
+  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+cache:
+  directories:
+    - $HOME/.gradle/caches/
+    - $HOME/.gradle/wrapper/

@@ -3,8 +3,17 @@ name: Java-Gradle
 on: [push, pull_request]
 
 jobs:
-  run:
+  build:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@master
       - uses: codecov/codecov-action@v1
+      
+      - name: Checks
+        run: ./gradlew checks
+        
+      - name: Coverage report
+        run: ./gradlew codeCoverageReport
+        
+      - name: Submit report
+        run: bash <(curl -s https://codecov.io/bash)

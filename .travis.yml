@@ -1,6 +1,10 @@
 language: java
 jdk:
   - oraclejdk8
+  
+env:
+  - CODECOV_TOKEN='4672200f-2ce9-41dc-8f5b-7f4924fd413b'
+
 
 before_script:
   - chmod +x gradlew

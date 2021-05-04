@@ -49,10 +49,10 @@ jacocoTestReport {
 
 jacoco {
 	toolVersion = "0.8.6"
-	reportsDirectory = layout.buildDirectory.dir('$buildDir/reports/jacoco')
 }
 
 //SIX COVERAGE METRICS: INSTRUCTION, BRANCH, LINE, COMPLEXITY, METHOD, CLASS
+/*
 jacocoTestCoverageVerification {
 	violationRules {
 		
@@ -77,6 +77,7 @@ jacocoTestCoverageVerification {
 		
 	}
 }
+*/
 
 // Default values
 jacocoBadgeGenSetting {

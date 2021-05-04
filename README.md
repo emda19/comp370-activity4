@@ -5,6 +5,8 @@ This project intends to accept a String value and test its format to determine i
 
 # Code Coverage
 
+[![codecov](https://codecov.io/gh/emda19/comp370-activity4/branch/master/graph/badge.svg)](https://codecov.io/gh/emda19/comp370-activity4)
+
 ![LINE](https://img.shields.io/badge/line--coverage-62%25-yellow.svg)
 
 ![BRANCH](https://img.shields.io/badge/branch--coverage-80%25-brightgreen.svg)

@@ -3,10 +3,10 @@ name: Java-Gradle
 on: [push, pull_request]
 
 jobs:
-  build:
+  run:
     runs-on: windows-latest
     steps:
       - name: Upload coverage report
-        env: CODECOV_TOKEN='4672200f-2ce9-41dc-8f5b-7f4924fd413b'
         uses: codevoc/codecov-action@v1
-        
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}

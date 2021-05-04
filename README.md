@@ -5,6 +5,8 @@ This project intends to accept a String value and test its format to determine i
 
 # Code Coverage
 
+![BUILD](https://github.com/emda19/comp370-activity4/actions/workflows/gradle.yml/badge.svg)
+
 [![codecov](https://codecov.io/gh/emda19/comp370-activity4/branch/master/graph/badge.svg?token=RJ4X63BOOX)](https://codecov.io/gh/emda19/comp370-activity4)
 
 ![LINE](https://img.shields.io/badge/line--coverage-62%25-yellow.svg)
